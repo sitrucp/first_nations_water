@@ -1,0 +1,54 @@
+.container { 
+    margin-top: 20px;
+    margin-bottom: 40px; 
+}
+
+.modebar{
+    display: none !important;
+}
+
+.div_chart {
+    margin-top: 1px;
+    height: 300px;
+}
+
+.box-value {
+    vertical-align:top;
+    background-color: #F8F8FF;
+    padding: 5px 0px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
+
+.rowLifted {
+    background-color: rgb(99, 110, 250,.2);
+}
+
+.rowCurrent {
+    background-color: rgb(239, 85, 59,.2);
+}
+
+table tbody tr td {
+    font-size: 12px;
+}
+
+table thead tr th {
+    font-size: 12px;
+}
+
+.modebar{
+    display: none !important;
+}
+
+th {
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
