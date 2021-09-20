@@ -6,7 +6,7 @@ Indigenous Services Canada maintains a map of these advisories <a href="https://
 
 The map data source and download file are actually a subset of a larger data file which contains about 700 records. A copy of this larger data file <a href="https://github.com/sitrucp/first_nations_water/blob/master/lTDWA_map_data_1572010201618_eng.txt" target="_blank">lTDWA_map_data_1572010201618_eng.txt</a> is contained in this repository. The ISC website url for this larger data file is <a href="https://www.sac-isc.gc.ca//DAM/DAM-ISC-SAC/DAM-WTR/STAGING/texte-text/lTDWA_map_data_1572010201618_eng.txt" target="_blank">https://www.sac-isc.gc.ca//DAM/DAM-ISC-SAC/DAM-WTR/STAGING/texte-text/lTDWA_map_data_1572010201618_eng.txt</a>
 
-The <a href="https://github.com/sitrucp/first_nations_water/blob/master/water_map_data.py" target="_blank">water_map_data.py</a> code retrieves the larger data file. 
+The <a href="https://github.com/sitrucp/first_nations_water/blob/master/water_map_data.py" target="_blank">water_map_data.py</a> code retrieves the larger data file.
 
 The <a href="https://github.com/sitrucp/first_nations_water/blob/master/first_nations_water.js" target="_blank">first_nations_water.js</a> code parses and transforms the larger data file to create the 160 records used to create charts on this <a href="https://sitrucp.github.io/first_nations_water" target="_blank">Github.io web page</a> for this repository. 
 
