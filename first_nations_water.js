@@ -1,8 +1,8 @@
 //url = 'https://www.sac-isc.gc.ca//DAM/DAM-ISC-SAC/DAM-WTR/STAGING/texte-text/lTDWA_map_data_1572010201618_eng.txt';
 
 const url = './lTDWA_map_data_1572010201618_eng.txt';
-const colorLifted = 'rgb(99, 110, 250,.9)';
-const colorCurrent = 'rgb(239, 85, 59,.8)';
+const colorLifted = 'rgba(99, 110, 250,.7)';
+const colorCurrent = 'rgba(239, 85, 59,.7)';
 
 // this is called by fetchData(); below, maybe call after filter applied, maybe change this from const to function?
 const fetchData = async () => {

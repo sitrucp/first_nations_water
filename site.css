@@ -20,11 +20,11 @@
 }
 
 .rowLifted {
-    background-color: rgb(99, 110, 250,.2);
+    background-color: rgba(99, 110, 250,.2);
 }
 
 .rowCurrent {
-    background-color: rgb(239, 85, 59,.2);
+    background-color: rgba(239, 85, 59,.2);
 }
 
 table tbody tr td {
