@@ -25,14 +25,16 @@ const fetchData = async () => {
         if (community.LTDWACurrent != null) {
             community.LTDWACurrent.forEach(function (waterCurrent) {
                 waterCurrent['Status'] = 'Current';
-                waterCurrent['Province'] = community['Province'] ;
+                waterCurrent['Province'] = community['Province'];
+                waterCurrent['CommunityNum'] = community['CommunityNum'];
                 arrLTDWA.push(waterCurrent);
             });
         }
         if (community.LTDWALifted != null) {
             community.LTDWALifted.forEach(function (waterLifted) {
                 waterLifted['Status'] = 'Lifted';
-                waterLifted['Province'] = community['Province'] ;
+                waterLifted['Province'] = community['Province'];
+                waterLifted['CommunityNum'] = community['CommunityNum'];
                 arrLTDWA.push(waterLifted);
             });
         }
@@ -438,7 +440,7 @@ function createTable(arrTable) {
             tbody_tr.append("<td>" + obj.AdvisoryID + "</td>");
             tbody_tr.append("<td>" + obj.Province + "</td>");
             tbody_tr.append("<td>" + obj.WaterSystemName + "</td>");
-            tbody_tr.append("<td style='text-align: left;'>" + obj.CommunityName + "</td>");
+            tbody_tr.append("<td style='text-align: left;'><a href='https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/FNMain.aspx?BAND_NUMBER=" + obj.CommunityNum + "&lang=eng' target='_blank'>" + obj.CommunityName + "</td>");
             tbody_tr.append("<td style='text-align: left;'>" + obj.Status + "</td>");
             tbody_tr.append("<td style='text-align: left;'>" + obj.AdvisoryType + "</td>");
             tbody_tr.append("<td style='text-align: left; min-width:80px;'>" + obj.DateSet + "</td>");
