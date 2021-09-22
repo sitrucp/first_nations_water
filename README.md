@@ -11,7 +11,7 @@ The <a href="https://github.com/sitrucp/first_nations_water/blob/master/water_ma
 The <a href="https://github.com/sitrucp/first_nations_water/blob/master/first_nations_water.js" target="_blank">first_nations_water.js</a> code parses and transforms the larger data file to create the 160 records used to create charts on this <a href="https://sitrucp.github.io/first_nations_water" target="_blank">Github.io web page</a> for this repository.
 
 # Bonus Excel File For Desktop Analysis
-The Excel file in the repository <a href="https://github.com/sitrucp/first_nations_water/blob/master/ICS LTDWA Power Query.xlsx" target="_blank"> uses a Power Query to link to the website larger data file and transform it to 160 advisory records. Download the Excel to do desktop analysis. 
+The advisory data is also included in the Excel file in the repository <a href="https://github.com/sitrucp/first_nations_water/blob/master/ICS LTDWA Power Query.xlsx" target="_blank">ICS LTDWA Power Query.xlsx</a>. Download the Excel file to do your own desktop analysis on live ISC website data.
 
 # Note
 The ISC map data is shared with Crown-Indigenous Relations and Northern Affairs Canada (CIRNAC) and is the Canadian government official source for First Nation geographic location on maps as noted <a href="https://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4" target="_blank">here</a>.

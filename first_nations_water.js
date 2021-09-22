@@ -20,6 +20,10 @@ const fetchData = async () => {
     })
 
     // get only LTDWACurrent & LTDWALifted array elements with values (should be 160)
+
+    // add DataBiim, if it has data, it applies to the community
+    // 1) create separate dataset, or sub-array in existing array
+
     const arrLTDWA = [];
     dataAll.forEach(community => {
         if (community.LTDWACurrent != null) {
