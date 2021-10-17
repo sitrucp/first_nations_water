@@ -4,7 +4,8 @@ const url = './lTDWA_map_data_1572010201618_eng.txt';
 const colorLifted = 'rgba(99, 110, 250,.7)';
 const colorCurrent = 'rgba(239, 85, 59,.7)';
 
-// this is called by fetchData(); below, maybe call after filter applied, maybe change this from const to function?
+// Called by fetchData(); below
+// Future: maybe call after filter applied? maybe change this from const to function?
 const fetchData = async () => {
     const response = await fetch(url)
     const data = await response.json()
@@ -19,11 +20,9 @@ const fetchData = async () => {
         }
     })
 
-    // get only LTDWACurrent & LTDWALifted array elements with values (should be 160)
-
-    // add DataBiim, if it has data, it applies to the community
-    // 1) create separate dataset, or sub-array in existing array
-
+    // GET ONLY LTDWACurrent & LTDWALifted ELEMENTS
+    // should be ~160 records
+    // add some new key values to arrays for reports
     const arrLTDWA = [];
     dataAll.forEach(community => {
         if (community.LTDWACurrent != null) {
@@ -44,7 +43,7 @@ const fetchData = async () => {
         }
     });
 
-    /////// ADD NEW COLUMNS TO ARRAY & FIX EXISTING COLUMNS
+    /////// ADD MORE NEW COLUMNS TO ARRAY & FIX EXISTING COLUMNS
     arrLTDWA.forEach(function(d) {
         d.DateSet_YYYY = d.DateSet.substring(0, 4)
         d.DateSet_YYYY_MM = d.DateSet.substring(0, 7)
@@ -61,14 +60,14 @@ const fetchData = async () => {
         d.Province = titleCase(d.Province);
     });
 
-    console.log(arrLTDWA);
-
     // CREATE TOTAL, CURRENT & LIFTED ADVISORIES COUNTS
     const totalLTDWAs = arrLTDWA.length;
     const totalLTDWALifted = arrLTDWA.filter(function(item){
         return item['Status'] == 'Lifted';}).length;
     const totalLTDWACurrent = arrLTDWA.filter(function(item){
         return item['Status'] == 'Current';}).length;
+    const pctLifted = Math.round(totalLTDWALifted / totalLTDWAs * 100) + '%';
+    const pctCurrent = Math.round(totalLTDWACurrent / totalLTDWAs * 100) + '%';
 
     // CREATE FIRST NATIONS SECTION DATA & CHARTS
     // * count unique CommunityName that have 1+ advisory(s)
@@ -82,8 +81,8 @@ const fetchData = async () => {
     // add content to index.html
     document.getElementById('last_update').innerHTML += 'Data updated: ' + data['GenerateDate'];
     document.getElementById('total_advisories').innerHTML += 'Total advisories: ' + totalLTDWAs;
-    document.getElementById('lifted_advisories').innerHTML += 'Lifted advisories: ' + totalLTDWALifted;
-    document.getElementById('current_advisories').innerHTML += 'Current advisories: ' + totalLTDWACurrent;
+    document.getElementById('lifted_advisories').innerHTML += 'Lifted advisories: ' + totalLTDWALifted + ' (' + pctLifted + ')';
+    document.getElementById('current_advisories').innerHTML += 'Current advisories: ' + totalLTDWACurrent + ' (' + pctCurrent + ')';
 
     // create charts
     createChart(arrLTDWA, 'AdvisoryType', 'Advisory Type', 'div_chart_type', 'h');
